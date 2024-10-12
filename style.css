@@ -1,20 +1,27 @@
 /* Container utama untuk peta dan tabel */
 .container {
     display: flex;
-    flex-direction: column; /* Susun elemen secara vertikal */
+    flex-direction: column; /* Susun elemen secara vertikal pada perangkat kecil */
     align-items: stretch; /* Pastikan elemen mengambil lebar penuh */
     height: 100vh; /* Set tinggi container ke 100% dari viewport */
 }
 
+/* Responsif untuk perangkat besar */
+@media (min-width: 769px) {
+    .container {
+        flex-direction: row; /* Susun elemen secara horizontal pada perangkat besar */
+    }
+}
+
 /* Styling untuk peta */
 #map {
-    width: 100%; /* Peta mengambil lebar penuh */
-    height: 300px; /* Tinggi tetap */
+    width: 70%; /* Peta mengambil 70% dari lebar container */
+    height: 100vh; /* Tinggi peta sama dengan tinggi layar */
 }
 
 /* Container tabel agar dapat di-scroll secara mandiri */
 .table-container {
-    width: 100%; /* Tabel juga mengambil lebar penuh */
+    width: 30%; /* Tabel mengambil 30% dari lebar container */
     height: auto; /* Tinggi otomatis untuk menyesuaikan konten */
     overflow-y: auto; /* Izinkan scroll vertikal jika diperlukan */
     border: 1px solid #ccc;
@@ -91,13 +98,8 @@ button.delete:hover {
 
 /* Responsif untuk perangkat kecil */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column; /* Susun elemen vertikal di perangkat kecil */
-    }
-
-    /* Map dan tabel mengambil lebar penuh */
     #map {
-        width: 100%;
+        width: 100%; /* Peta mengambil lebar penuh */
         height: 300px; /* Tinggi peta pada perangkat kecil */
     }
 
@@ -106,7 +108,6 @@ button.delete:hover {
         height: auto; /* Tinggi tabel otomatis */
     }
 }
-
 
 /* Gaya untuk modal */
 .modal {
