@@ -131,3 +131,23 @@ function exportToCSV() {
 
 // Event listener untuk tombol export CSV
 document.getElementById('export').addEventListener('click', exportToCSV);
+
+// Menampilkan modal saat aplikasi dibuka
+window.onload = function () {
+    const modal = document.getElementById("tutorial-modal");
+    const closeButton = document.getElementById("close-modal");
+
+    modal.style.display = "block"; // Tampilkan modal
+
+    // Menutup modal saat tombol ditutup diklik
+    closeButton.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // Menutup modal saat area di luar modal diklik
+    window.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    }
+}

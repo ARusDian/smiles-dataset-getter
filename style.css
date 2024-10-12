@@ -128,3 +128,50 @@ button.delete:hover {
         padding: 5px 8px;
     }
 }
+
+/* Gaya untuk modal */
+.modal {
+    display: none; /* Tersembunyi secara default */
+    position: fixed; /* Tetap pada posisi */
+    z-index: 1000; /* Pastikan modal di atas elemen lain */
+    left: 0;
+    top: 0;
+    width: 100%; /* Lebar penuh */
+    height: 100%; /* Tinggi penuh */
+    overflow: auto; /* Jika diperlukan, tambahkan scroll */
+    background-color: rgba(0, 0, 0, 0.7); /* Transparansi */
+}
+
+/* Konten modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* Menyusun posisi di tengah */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Lebar konten modal */
+    max-width: 600px; /* Atur lebar maksimum untuk konten */
+    border-radius: 8px; /* Tambahkan radius untuk sudut */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan untuk efek kedalaman */
+}
+
+/* Tombol tutup */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsif untuk modal */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 90%; /* Lebar penuh pada perangkat kecil */
+    }
+}

@@ -10,6 +10,23 @@
 </head>
 
 <body>
+    <!-- Modal untuk tutorial -->
+    <div id="tutorial-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Tutorial Penggunaan Aplikasi</h2>
+            <p>Selamat datang di aplikasi peta interaktif!</p>
+            <ul>
+                <li>Untuk menambahkan marker, klik pada lokasi di peta.</li>
+                <li>Data lokasi akan muncul di tabel di samping peta.</li>
+                <li>Gunakan tombol "Hapus" untuk menghapus marker dan data.</li>
+                <li>Klik tombol "Export to CSV" untuk mengunduh data lokasi.</li>
+                <li>Tabel akan berada di bawah peta saat menggunakan perangkat seluler.</li>
+            </ul>
+            <button id="close-modal">Tutup</button>
+        </div>
+    </div>
+
     <div class="container">
         <div id="map"></div>
         <div class="table-container">
