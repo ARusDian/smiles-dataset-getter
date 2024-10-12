@@ -1,0 +1,130 @@
+/* Atur container utama untuk menampilkan peta dan tabel di samping */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh; /* Set tinggi container 100% dari tinggi viewport */
+    gap: 20px;
+}
+
+/* Styling untuk map */
+#map {
+    width: 70%;
+    height: 100%; /* Sesuaikan tinggi map 100% dari container */
+}
+
+/* Container tabel agar dapat di-scroll secara mandiri */
+.table-container {
+    width: 28%;
+    height: 100%; /* Sesuaikan tinggi tabel 100% dari container */
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* Atur tabel agar terlihat rapi */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+/* Membuat teks Address dipersingkat dengan ellipsis (...) */
+td.address {
+    white-space: nowrap;      /* Teks tidak akan dibungkus */
+    overflow: hidden;         /* Sembunyikan teks yang meluap */
+    text-overflow: ellipsis;  /* Tampilkan ellipsis (...) ketika teks terlalu panjang */
+    max-width: 150px;         /* Atur lebar maksimal kolom (ubah sesuai kebutuhan) */
+    cursor: pointer;          /* Ganti cursor untuk menunjukkan elemen bisa di-klik */
+}
+
+/* Menampilkan alamat penuh saat di-expand */
+td.address.expanded {
+    white-space: normal;      /* Bungkus teks menjadi beberapa baris */
+    overflow: visible;        /* Tampilkan teks yang meluap */
+    max-width: none;          /* Hapus batas lebar kolom */
+    word-wrap: break-word;    /* Pecah kata jika terlalu panjang */
+}
+
+
+/* Membuat teks Address dipersingkat dengan ellipsis (...) */
+td:nth-child(4), th:nth-child(4) {
+    white-space: nowrap;      /* Teks tidak akan dibungkus */
+    overflow: hidden;         /* Sembunyikan teks yang meluap */
+    text-overflow: ellipsis;  /* Tampilkan ellipsis (...) ketika teks terlalu panjang */
+    max-width: 150px;         /* Atur lebar maksimal kolom (ubah sesuai kebutuhan) */
+}
+
+/* Styling tombol export agar lebih indah */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect untuk tombol export */
+button:hover {
+    background-color: #45a049;
+}
+
+/* Styling tombol delete agar berwarna merah */
+button.delete {
+    background-color: #f44336;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+/* Hover effect untuk tombol delete */
+button.delete:hover {
+    background-color: #d32f2f;
+}
+
+/* Responsif untuk perangkat kecil (ponsel) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Susun elemen vertikal di perangkat kecil */
+        gap: 10px;
+    }
+
+    /* Map akan memiliki lebar penuh pada perangkat kecil */
+    #map {
+        width: 100%;
+        height: 300px; /* Atur tinggi map pada perangkat kecil */
+    }
+
+    /* Tabel pindah ke bawah map dengan lebar penuh */
+    .table-container {
+        width: 100%;
+        height: auto; /* Atur tinggi tabel otomatis */
+    }
+
+    /* Perbesar font dan tombol agar lebih ramah seluler */
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    button.delete {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+}
